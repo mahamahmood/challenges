@@ -1,4 +1,6 @@
 # README
+## Songs Rails App 
+A single-model app that serves json data for songs.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
