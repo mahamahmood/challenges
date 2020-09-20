@@ -1,4 +1,6 @@
 # README
+## ReGift Rail API APP
+An app that can do full CRUD on a single model (gift).
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
