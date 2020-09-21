@@ -1,4 +1,7 @@
 # README
+## Books Rails App API
+
+A single-model app that serves json data for books.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
