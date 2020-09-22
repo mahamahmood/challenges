@@ -1,0 +1,1564 @@
+  [1m[35m (903.4ms)[0m  [1m[35mCREATE DATABASE "dating_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (496.8ms)[0m  [1m[35mCREATE DATABASE "dating_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (89.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1722971123778292395)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200921211503)
+  [1m[35m (23.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (42.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "starsign" character varying, "age" integer, "img" character varying, "ltl" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200921211503"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (26.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-21 21:15:59.312217"], ["updated_at", "2020-09-21 21:15:59.312217"]]
+  [1m[35m (24.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1722971123778292395)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (27.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ryan Gosling"], ["starsign", "Scorpio"], ["age", 35], ["img", "http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.577314"], ["updated_at", "2020-09-21 21:26:26.577314"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (23.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", " Hypatia of Alexandria  "], ["starsign", "Aries"], ["age", 1700], ["img", "http://static1.squarespace.com/static/53e031f1e4b088c3aac80e47/t/5636ebf1e4b0683b6c56cb43/1446440030277/hypatia.jpg"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.586291"], ["updated_at", "2020-09-21 21:26:26.586291"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Hogan"], ["starsign", "Libra"], ["age", 40], ["img", "http://myfivebest.com/wp-content/uploads/2010/10/crime_crane.jpg"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.618004"], ["updated_at", "2020-09-21 21:26:26.618004"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lumpy Space Princess"], ["starsign", "Virgo"], ["age", 29], ["img", "http://i0.wp.com/www.drawcentral.com/wp-content/uploads/2013/03/Lumpy-Space-Princess.jpg?resize=150%2C150"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.624139"], ["updated_at", "2020-09-21 21:26:26.624139"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Idris Elba"], ["starsign", "Virgo"], ["age", 43], ["img", "http://www.ramascreen.com/wp-content/uploads/2015/01/Idris-Elba-Luther-150x150.jpg"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.630815"], ["updated_at", "2020-09-21 21:26:26.630815"]]
+  [1m[35m (25.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Trash Heap of Fraggle Rock"], ["starsign", "Taurus"], ["age", 1000], ["img", "http://www.toughpigs.com/wp-content/uploads/2009/12/trasheap-150x150.jpg"], ["ltl", false], ["created_at", "2020-09-21 21:26:26.664533"], ["updated_at", "2020-09-21 21:26:26.664533"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Guy Guy"], ["starsign", "Gemni"], ["age", 60], ["img", "https://s-media-cache-ak0.pinimg.com/236x/03/d1/53/03d153c14b49a88cab97d58a5bedb6e8.jpg"], ["ltl", false], ["created_at", "2020-09-21 21:26:26.673720"], ["updated_at", "2020-09-21 21:26:26.673720"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Raisin"], ["starsign", "Gemni"], ["age", 20], ["img", "http://cdn.lifeinthefastlane.com/wp-content/uploads/2010/09/raisin.jpg"], ["ltl", false], ["created_at", "2020-09-21 21:26:26.681554"], ["updated_at", "2020-09-21 21:26:26.681554"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (23.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jim"], ["starsign", "Leo"], ["age", 49], ["img", "http://www.argylejournal.com/wp-content/uploads/2012/10/Jim-Ellinghausen-e1349993531939-150x150.jpg"], ["ltl", false], ["created_at", "2020-09-21 21:26:26.688451"], ["updated_at", "2020-09-21 21:26:26.688451"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Muttley"], ["starsign", "Capricorn"], ["age", 2], ["img", "http://gifrific.com/wp-content/uploads/2012/08/Cartoon-Character-Mutley-Laughing-150x150.gif"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.717777"], ["updated_at", "2020-09-21 21:26:26.717777"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Slimer"], ["starsign", "Pisces"], ["age", 90], ["img", "http://orig13.deviantart.net/ef48/f/2014/309/1/5/slimer_by_bbjeg-d85exys.png"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.725882"], ["updated_at", "2020-09-21 21:26:26.725882"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (27.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Mist"], ["starsign", "Aquarius"], ["age", 340000], ["img", "http://www.kidthesaurus.com/wp-content/uploads/2015/07/mist-150x150.jpg"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.734258"], ["updated_at", "2020-09-21 21:26:26.734258"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ching Shih"], ["starsign", "Sagittarius"], ["age", 340000], ["img", "http://treehouseletter.com/wp-content/uploads/2015/04/Ching-Shih-150x150.jpg"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.772134"], ["updated_at", "2020-09-21 21:26:26.772134"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Galadriel"], ["starsign", "Sagittarius"], ["age", 7045], ["img", "http://nerdbastards.com/wp-content/uploads/2015/12/Galadriel-and-Phial-150x150.jpg"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.778556"], ["updated_at", "2020-09-21 21:26:26.778556"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Skeletor"], ["starsign", "Cancer"], ["age", 19], ["img", "http://www.shwiggie.com/media/images/skeletor-smirk.jpg"], ["ltl", true], ["created_at", "2020-09-21 21:26:26.785352"], ["updated_at", "2020-09-21 21:26:26.785352"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sauron"], ["starsign", "Taurus"], ["age", 198], ["img", "http://ia.media-imdb.com/images/M/MV5BMTc0Njk5NDQwNl5BMl5BanBnXkFtZTYwNTU3NTky._V1_SX150_CR0,0,150,150_.jpg"], ["ltl", false], ["created_at", "2020-09-21 21:26:26.819200"], ["updated_at", "2020-09-21 21:26:26.819200"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-09-21 17:27:25 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 126.2ms | Allocations: 469)
+Completed 200 OK in 172ms (Views: 141.6ms | ActiveRecord: 0.0ms | Allocations: 2528)
+
+
+Started GET "/users" for ::1 at 2020-09-21 17:28:15 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 204ms (Views: 33.2ms | ActiveRecord: 168.3ms | Allocations: 9371)
+
+
+Started GET "/users" for ::1 at 2020-09-21 17:29:48 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 2.2ms | Allocations: 3242)
+
+
+Started POST "/users" for ::1 at 2020-09-21 17:32:33 -0400
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"test", "starsign"=>"Scorpio", "age"=>35, "img"=>"http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177", "ltl"=>true, "user"=>{"name"=>"test", "starsign"=>"Scorpio", "age"=>35, "img"=>"http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177", "ltl"=>true}}
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (3.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "ltl", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "test"], ["starsign", "Scorpio"], ["age", 35], ["img", "http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177"], ["ltl", true], ["created_at", "2020-09-21 21:32:33.834524"], ["updated_at", "2020-09-21 21:32:33.834524"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (33.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 103ms (Views: 3.4ms | ActiveRecord: 39.5ms | Allocations: 2927)
+
+
+Started PUT "/users" for ::1 at 2020-09-21 17:32:43 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/users"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PATCH "/users" for ::1 at 2020-09-21 17:32:54 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-09-21 17:33:04 -0400
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"test", "starsign"=>"Scorpio", "age"=>35, "img"=>"http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177", "ltl"=>true, "user"=>{"name"=>"test", "starsign"=>"Scorpio", "age"=>35, "img"=>"http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177", "ltl"=>true}}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 3.9ms | Allocations: 3371)
+
+
+Started PUT "/users" for ::1 at 2020-09-21 17:33:14 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/users"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PUT "/users" for ::1 at 2020-09-21 17:33:24 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/users"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-09-21 17:33:57 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 2.6ms | Allocations: 3369)
+
+
+Started PUT "/users/17" for ::1 at 2020-09-21 17:34:04 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"dfsdfsd", "starsign"=>"Scorpio", "age"=>35, "img"=>"http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177", "ltl"=>true, "id"=>"17", "user"=>{"name"=>"dfsdfsd", "starsign"=>"Scorpio", "age"=>35, "img"=>"http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177", "ltl"=>true}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mUser Update (57.6ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["name", "dfsdfsd"], ["updated_at", "2020-09-21 21:34:04.780885"], ["id", 17]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:29:in `update'
+Completed 200 OK in 102ms (Views: 0.6ms | ActiveRecord: 67.5ms | Allocations: 4686)
+
+
+Started DELETE "/users/17" for ::1 at 2020-09-21 17:34:10 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"name"=>"dfsdfsd", "starsign"=>"Scorpio", "age"=>35, "img"=>"http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177", "ltl"=>true, "id"=>"17", "user"=>{"name"=>"dfsdfsd", "starsign"=>"Scorpio", "age"=>35, "img"=>"http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177", "ltl"=>true}}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `set_user'
+  [1m[35m (7.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+  [1m[36mUser Destroy (2.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+Completed 204 No Content in 58ms (ActiveRecord: 50.0ms | Allocations: 2478)
+
+
+Started GET "/users" for ::1 at 2020-09-21 17:34:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (37.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 47ms (Views: 9.1ms | ActiveRecord: 37.7ms | Allocations: 3221)
+
+
+Started GET "/users" for ::1 at 2020-09-21 19:50:49 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 41ms (Views: 19.5ms | ActiveRecord: 18.1ms | Allocations: 9363)
+
+
+Started GET "/users" for ::1 at 2020-09-21 20:10:28 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 14.0ms | ActiveRecord: 1.2ms | Allocations: 3322)
+
+
+Started GET "/users" for ::1 at 2020-09-21 20:14:40 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 1.6ms | Allocations: 3240)
+
+
+Started GET "/users" for ::1 at 2020-09-21 20:46:43 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 17.2ms | ActiveRecord: 14.0ms | Allocations: 9366)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:01:39 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 6.6ms | Allocations: 3324)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:03:05 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 3.5ms | Allocations: 3242)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:03:09 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (19.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 6.6ms | ActiveRecord: 19.3ms | Allocations: 3242)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:03:48 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.7ms | Allocations: 3223)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:04:28 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (56.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 64ms (Views: 6.9ms | ActiveRecord: 56.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:04:37 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 4.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:05:20 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 8.9ms | ActiveRecord: 8.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:06:22 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 3.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:07:41 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (13.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 7.6ms | ActiveRecord: 13.3ms | Allocations: 3242)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:07:49 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 84ms (Views: 83.0ms | ActiveRecord: 0.4ms | Allocations: 3227)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:07:51 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:07:59 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (18.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 7.8ms | ActiveRecord: 18.6ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:08:52 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (20.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 8.0ms | ActiveRecord: 20.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:08:58 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 6.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:09:13 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (27.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 34ms (Views: 6.1ms | ActiveRecord: 27.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:09:45 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:10:07 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:19:27 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 1.1ms | Allocations: 3312)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:21:12 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 4.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:24:15 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:24:23 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 2.0ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:24:51 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 5.9ms | ActiveRecord: 9.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:24:56 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 3.3ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:25:20 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (26.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 4.9ms | ActiveRecord: 26.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:27:35 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 7.7ms | ActiveRecord: 9.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:33:56 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (26.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 33ms (Views: 6.0ms | ActiveRecord: 26.3ms | Allocations: 3313)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:35:45 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 1.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:35:56 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:36:40 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (56.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 64ms (Views: 6.8ms | ActiveRecord: 56.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:37:06 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:37:35 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:37:42 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (26.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 4.1ms | ActiveRecord: 26.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:38:10 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (45.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 54ms (Views: 8.0ms | ActiveRecord: 45.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:38:20 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (103.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 111ms (Views: 7.2ms | ActiveRecord: 103.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:38:29 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 4.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:38:36 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (46.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 56ms (Views: 9.2ms | ActiveRecord: 46.1ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:39:02 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (30.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 37ms (Views: 5.9ms | ActiveRecord: 30.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:39:15 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (60.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 66ms (Views: 5.4ms | ActiveRecord: 60.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:39:49 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (33.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 40ms (Views: 6.4ms | ActiveRecord: 33.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:40:15 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (46.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 51ms (Views: 4.4ms | ActiveRecord: 46.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:40:35 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (47.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 53ms (Views: 4.5ms | ActiveRecord: 47.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:40:48 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.9ms | Allocations: 3225)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:41:01 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 3.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:41:08 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (34.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 43ms (Views: 7.7ms | ActiveRecord: 34.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:42:51 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (35.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 41ms (Views: 4.8ms | ActiveRecord: 35.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:42:58 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 2.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:43:03 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 1.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:43:08 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 5.0ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:43:31 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (78.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 87ms (Views: 7.6ms | ActiveRecord: 78.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:43:57 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (31.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 6.2ms | ActiveRecord: 31.6ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:44:01 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:45:33 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:46:03 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (151.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 161ms (Views: 8.3ms | ActiveRecord: 151.6ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:46:12 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 7.4ms | ActiveRecord: 7.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:46:17 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 7.8ms | ActiveRecord: 12.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:46:32 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 5.1ms | ActiveRecord: 9.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:47:05 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 4.2ms | Allocations: 3227)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:47:46 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 74ms (Views: 3.0ms | ActiveRecord: 56.0ms | Allocations: 8708)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:48:14 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (133.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 167ms (Views: 15.3ms | ActiveRecord: 149.5ms | Allocations: 8759)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:48:39 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:49:49 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (25.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 5.5ms | ActiveRecord: 25.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:50:12 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 2.3ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:50:19 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 4.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:53:32 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (48.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 56ms (Views: 7.9ms | ActiveRecord: 48.0ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:54:10 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (43.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 51ms (Views: 7.4ms | ActiveRecord: 43.2ms | Allocations: 3227)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:54:22 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 3.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 21:54:26 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 6.5ms | ActiveRecord: 8.3ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:03:38 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 35ms (Views: 21.0ms | ActiveRecord: 11.1ms | Allocations: 3312)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:04:08 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (34.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 44ms (Views: 8.4ms | ActiveRecord: 34.6ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:04:14 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 2.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:04:33 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 2.1ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:05:06 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 7.9ms | ActiveRecord: 11.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:05:18 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 6.3ms | ActiveRecord: 6.3ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:05:24 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (201.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 211ms (Views: 9.6ms | ActiveRecord: 201.2ms | Allocations: 3227)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:06:00 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (132.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 138ms (Views: 5.1ms | ActiveRecord: 132.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:06:09 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 6.3ms | Allocations: 3227)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:06:21 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 2.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:06:30 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 1.0ms | Allocations: 3227)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:06:34 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 9.3ms | ActiveRecord: 9.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:06:50 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (43.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 50ms (Views: 6.1ms | ActiveRecord: 43.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:06:57 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 3.0ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:07:38 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:07:56 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (40.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 45ms (Views: 4.1ms | ActiveRecord: 40.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:08:19 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 6.0ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:08:34 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 4.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:09:10 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (245.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 254ms (Views: 8.7ms | ActiveRecord: 245.3ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:09:15 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 3.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:09:50 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:10:12 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 6.7ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:10:46 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (50.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 58ms (Views: 7.3ms | ActiveRecord: 50.1ms | Allocations: 3225)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:10:51 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 1.5ms | Allocations: 3227)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:11:11 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 2.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:11:28 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 2.6ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:11:35 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 2.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:11:42 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (19.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 7.5ms | ActiveRecord: 19.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:11:55 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (20.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 8.1ms | ActiveRecord: 20.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:12:03 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 3.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:12:09 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (54.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 60ms (Views: 5.3ms | ActiveRecord: 54.3ms | Allocations: 3225)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:12:16 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:12:28 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 1.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:12:37 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 2.3ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:12:46 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 3.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:12:50 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 7.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:13:06 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 2.2ms | Allocations: 3227)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:13:09 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 2.8ms | Allocations: 3225)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:13:17 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 2.8ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:13:58 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 3.0ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:14:13 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 1.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:14:38 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:14:53 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 4.7ms | ActiveRecord: 11.9ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:14:57 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.5ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:15:03 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (86.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 94ms (Views: 7.3ms | ActiveRecord: 86.6ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:15:26 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (35.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 41ms (Views: 5.1ms | ActiveRecord: 35.4ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:15:46 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (26.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 4.5ms | ActiveRecord: 26.1ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:21:30 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (22.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 8.5ms | ActiveRecord: 22.2ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:23:23 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 20.3ms | ActiveRecord: 10.2ms | Allocations: 3227)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:23:27 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 3.6ms | Allocations: 3224)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:26:51 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (15.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 205ms (Views: 6.9ms | ActiveRecord: 176.8ms | Allocations: 7333)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:34:36 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (84.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 170ms (Views: 29.1ms | ActiveRecord: 84.0ms | Allocations: 7061)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:34:51 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 67ms (Views: 1.0ms | ActiveRecord: 49.3ms | Allocations: 7276)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:36:38 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 0.0ms | Allocations: 8907)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `splic' for #<User::ActiveRecord_Relation:0x00007fdf6c1ea2f0>
+Did you mean?  split
+               slice):
+  
+app/controllers/users_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users" for ::1 at 2020-09-21 22:37:01 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (21.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 55ms (Views: 2.1ms | ActiveRecord: 30.0ms | Allocations: 8632)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:37:19 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 58ms (Views: 1.1ms | ActiveRecord: 44.3ms | Allocations: 7220)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:38:23 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 41.9ms | Allocations: 6772)
+
+
+  
+NoMethodError (undefined method `shuffle' for nil:NilClass):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for ::1 at 2020-09-21 22:38:40 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 59ms (Views: 1.0ms | ActiveRecord: 38.4ms | Allocations: 7253)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:39:09 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 10.3ms | Allocations: 7219)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:39:40 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (25.6ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.0ms | Allocations: 8801)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `random' for #<User::ActiveRecord_Relation:0x00007fdf6a1517c8>):
+  
+app/controllers/users_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users" for ::1 at 2020-09-21 22:39:47 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 2.8ms | ActiveRecord: 9.3ms | Allocations: 7242)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:41:02 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (25.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 30ms (Views: 1.6ms | ActiveRecord: 25.9ms | Allocations: 1684)
+
+
+Started GET "/users" for ::1 at 2020-09-21 22:59:48 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 32ms (Views: 3.6ms | ActiveRecord: 11.7ms | Allocations: 1774)
+
+
+Started POST "/users" for ::1 at 2020-09-21 23:01:00 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"", "age"=>"", "gender"=>"", "img"=>"", "user"=>{"name"=>"", "age"=>"", "img"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", ""], ["img", ""], ["created_at", "2020-09-22 03:01:00.236165"], ["updated_at", "2020-09-22 03:01:00.236165"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 65ms (Views: 2.7ms | ActiveRecord: 4.6ms | Allocations: 2831)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:01:50 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 1.4ms | Allocations: 1697)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:02:11 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (33.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 39ms (Views: 1.8ms | ActiveRecord: 33.6ms | Allocations: 1695)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:02:28 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (48.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 51ms (Views: 1.2ms | ActiveRecord: 48.2ms | Allocations: 1695)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:02:39 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 1.5ms | ActiveRecord: 9.4ms | Allocations: 1687)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:03:10 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 1.6ms | ActiveRecord: 8.4ms | Allocations: 1697)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:03:17 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (69.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 76ms (Views: 2.8ms | ActiveRecord: 69.9ms | Allocations: 1695)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:03:44 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.8ms | Allocations: 1697)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:03:55 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (34.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 40ms (Views: 1.7ms | ActiveRecord: 34.7ms | Allocations: 1687)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:04:48 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.5ms | Allocations: 1695)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:06:29 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (47.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 52ms (Views: 1.6ms | ActiveRecord: 47.6ms | Allocations: 1699)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:06:36 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 15.8ms | Allocations: 1697)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:07:03 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 3.6ms | Allocations: 1689)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:07:17 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (44.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 48ms (Views: 1.4ms | ActiveRecord: 44.5ms | Allocations: 1689)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:08:39 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.7ms | Allocations: 1699)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:08:46 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 0.8ms | Allocations: 1697)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:08:55 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (15.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 1.1ms | ActiveRecord: 15.5ms | Allocations: 1697)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:12:52 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 1.8ms | ActiveRecord: 6.0ms | Allocations: 1691)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:12:55 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 2.1ms | Allocations: 1695)
+
+
+Started POST "/users" for ::1 at 2020-09-21 23:13:11 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"test", "age"=>"test", "starsign"=>"test", "img"=>"test", "user"=>{"name"=>"test", "starsign"=>"test", "age"=>"test", "img"=>"test"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (26.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "test"], ["starsign", "test"], ["age", 0], ["img", "test"], ["created_at", "2020-09-22 03:13:11.874676"], ["updated_at", "2020-09-22 03:13:11.874676"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 35ms (Views: 0.6ms | ActiveRecord: 27.6ms | Allocations: 2618)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:14:36 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 3.3ms | Allocations: 1712)
+
+
+Started POST "/users" for ::1 at 2020-09-21 23:14:46 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"sdfs", "age"=>"sdfsd", "starsign"=>"", "img"=>"sdfsd", "user"=>{"name"=>"sdfs", "starsign"=>"", "age"=>"sdfsd", "img"=>"sdfsd"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "sdfs"], ["starsign", ""], ["age", 0], ["img", "sdfsd"], ["created_at", "2020-09-22 03:14:46.069357"], ["updated_at", "2020-09-22 03:14:46.069357"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 8ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 2616)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:14:53 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 1719)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-09-21 23:14:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-09-21 23:14:56 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 1.4ms | ActiveRecord: 2.8ms | Allocations: 1746)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:15:23 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (35.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 39ms (Views: 1.1ms | ActiveRecord: 35.3ms | Allocations: 1717)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:17:00 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 2.6ms | Allocations: 1719)
+
+
+Started POST "/users" for ::1 at 2020-09-21 23:17:49 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"dfd", "age"=>"dffd", "starsign"=>"dfd", "img"=>"https://images-na.ssl-images-amazon.com/images/I/51GrSoP5g2L.SS150.jpg", "user"=>{"name"=>"dfd", "starsign"=>"dfd", "age"=>"dffd", "img"=>"https://images-na.ssl-images-amazon.com/images/I/51GrSoP5g2L.SS150.jpg"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "dfd"], ["starsign", "dfd"], ["age", 0], ["img", "https://images-na.ssl-images-amazon.com/images/I/51GrSoP5g2L.SS150.jpg"], ["created_at", "2020-09-22 03:17:49.878486"], ["updated_at", "2020-09-22 03:17:49.878486"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (15.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 35ms (Views: 0.7ms | ActiveRecord: 16.5ms | Allocations: 2643)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:18:19 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 1.5ms | ActiveRecord: 11.3ms | Allocations: 1731)
+
+
+Started POST "/users" for ::1 at 2020-09-21 23:18:28 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"sdf", "age"=>"sdf", "starsign"=>"sdf", "img"=>"sdf", "user"=>{"name"=>"sdf", "starsign"=>"sdf", "age"=>"sdf", "img"=>"sdf"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "sdf"], ["starsign", "sdf"], ["age", 0], ["img", "sdf"], ["created_at", "2020-09-22 03:18:28.063767"], ["updated_at", "2020-09-22 03:18:28.063767"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 7ms (Views: 0.6ms | ActiveRecord: 1.7ms | Allocations: 2616)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:18:37 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 1747)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:20:58 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 2.4ms | ActiveRecord: 7.5ms | Allocations: 1745)
+
+
+Started POST "/users" for ::1 at 2020-09-21 23:21:06 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"dfs", "age"=>"sdfs", "starsign"=>"sdfds", "img"=>"sdf", "user"=>{"name"=>"dfs", "starsign"=>"sdfds", "age"=>"sdfs", "img"=>"sdf"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "dfs"], ["starsign", "sdfds"], ["age", 0], ["img", "sdf"], ["created_at", "2020-09-22 03:21:06.337056"], ["updated_at", "2020-09-22 03:21:06.337056"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (25.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 34ms (Views: 1.5ms | ActiveRecord: 25.9ms | Allocations: 2614)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:21:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 1.7ms | ActiveRecord: 1.3ms | Allocations: 1745)
+
+
+Started DELETE "/users/18" for ::1 at 2020-09-21 23:22:20 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"name"=>"", "starsign"=>nil, "age"=>nil, "img"=>"", "ltl"=>nil, "id"=>"18", "user"=>{"name"=>"", "starsign"=>nil, "age"=>nil, "img"=>"", "ltl"=>nil}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:43:in `set_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:37:in `destroy'
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:37:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:37:in `destroy'
+Completed 204 No Content in 35ms (ActiveRecord: 16.2ms | Allocations: 3942)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:22:26 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 1744)
+
+
+Started GET "/users/18" for ::1 at 2020-09-21 23:22:35 -0400
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"", "starsign"=>nil, "age"=>nil, "img"=>"", "ltl"=>nil, "id"=>"18", "user"=>{"name"=>"", "starsign"=>nil, "age"=>nil, "img"=>"", "ltl"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:43:in `set_user'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms | Allocations: 662)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=18):
+  
+app/controllers/users_controller.rb:43:in `set_user'
+Started GET "/users" for ::1 at 2020-09-21 23:22:41 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (22.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 1.2ms | ActiveRecord: 22.6ms | Allocations: 1739)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:22:45 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.7ms | Allocations: 1744)
+
+
+Started GET "/users" for ::1 at 2020-09-21 23:25:46 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 1.7ms | Allocations: 1744)
+
+
+Started POST "/users" for ::1 at 2020-09-21 23:25:59 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"test", "age"=>"test", "starsign"=>"test", "img"=>"test", "user"=>{"name"=>"test", "starsign"=>"test", "age"=>"test", "img"=>"test"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "starsign", "age", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "test"], ["starsign", "test"], ["age", 0], ["img", "test"], ["created_at", "2020-09-22 03:25:59.477948"], ["updated_at", "2020-09-22 03:25:59.477948"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 201 Created in 9ms (Views: 0.6ms | ActiveRecord: 1.8ms | Allocations: 2613)
+
+
