@@ -208,3 +208,117 @@ const todoIsCompleted = todos.filter(function(todo) {
     return todo.text;
 });
 console.log(todoIsCompleted);// returns an array with text of only completed text.
+
+////////////////////////////////////////////
+// Conditionals //
+////////////////////////////////////////////
+
+// if statement
+const a = 10;
+
+if(a == '10') {// it doesn't check for data type
+    console.log('a is 10');
+}
+if(a === 10){// check data type. match the type
+    console.log('a is === 10')
+}
+
+// if else
+const b = 20
+
+if(b === '10') {// it doesn't check for data type
+    console.log('b is 10');
+}else {
+    console.log('b is NOT 10')
+}
+
+// if else if else
+const c = 4;
+
+if(c === 10){
+    console.log('c is 10');
+}else if (c > 10){
+    console.log('c is greater than 10');
+}else{
+    console.log('c is less than 10');
+}
+
+// mulitple conditions
+const d = 6;
+const w = 11;
+
+if(d > 5 || w > 10){
+    console.log('d is more than 5 or w is more than 10');
+}
+if(d > 5 && w > 10){
+    console.log('d is more than 5 and w is more than 10');
+}
+
+//ternary operator
+// short hand if statments. used to assign varabile value based on conditions
+const g = 9;
+
+const color = g > 10 ? 'red' : 'blue'
+
+console.log(color);
+
+// switches. another way to evaluate a condition
+switch(color) {
+    case 'red':
+        console.log('color is red');
+        break;
+    case 'blue': 
+        console.log('color is blue');
+        break;
+    default:
+        console.log('color is NOT red or blue')
+        break;
+}
+
+////////////////////////////////////////////
+// Functions //
+////////////////////////////////////////////
+
+function addNums(num1, num2){// takes paramaters and accept arrguments
+    console.log(num1 + num2);
+}
+addNums(5,4);
+
+function addNums(num1 = 1, num2 = 1){
+    console.log(num1 + num2);
+}
+addNums(); // it gives back NaN which is not a number. it uses default values like the above parameters
+
+function addNums(num1 = 1, num2 = 1){
+    console.log(num1 + num2);
+}
+addNums(5, 5);// it would override the default values
+
+function addNums(num1 = 1, num2 = 1){
+    return (num1 + num2);
+}
+console.log(addNums(5, 5));
+
+//// arrow function ES6 ////
+const addNumss = (num1 = 1, num2 = 1) => {
+    console.log(num1 + num2);
+}
+addNumss(5, 5);
+// or
+const addNumsss = (num1 = 1, num2 = 1) => {
+    return num1 + num2;
+}
+console.log(addNumsss(5, 5));
+// or 
+const addNumssss = (num1 = 1, num2 = 1) =>  num1 + num2;
+console.log(addNumssss(5, 5));
+// or 
+const addNumsssss = num1 =>  num1 + 5;
+console.log(addNumsssss(5));
+
+/// arrow function with forEach
+todos.forEach((todo) => console.log(todo));
+
+////////////////////////////////////////////
+// Object Oriented Programming //
+////////////////////////////////////////////
