@@ -94,7 +94,6 @@ console.log(fruits.indexOf('oranges'));// to find the indexOf an item
 // Objects and Objects literals //
 ////////////////////////////////////////////
 // Objects literals are key value pairs
-
 const person = {
     firstName: 'John',
     lastName: 'Doe',
@@ -108,3 +107,104 @@ const person = {
 }
 
 console.log(person);
+console.log(person.firstName);
+console.log(person.firstName, person.lastName);
+console.log(person.hobbies[1]);
+console.log(person.address.city);
+
+//////////////////////////
+// Object Destructuring // 
+/////////////////////////
+// taking a key value pair and trun it to a variable
+const { firstName, lastName, address: { city } } = person; //pulling keys out of the object
+console.log(firstName);
+console.log(city);
+// adding properties
+person.email = 'john@gmail.com';
+console.log(person);
+
+// Arrays of objects
+const todos = [
+    {
+        id: 1,
+        text: 'Take out trash',
+        isCompleted: true
+    },
+    {
+        id: 2,
+        text: 'Meeting with boss',
+        isCompleted: true
+    },
+    {
+        id: 3,
+        text: 'Dentist appt',
+        isCompleted: false
+    }
+]
+
+console.log(todos);
+console.log(todos[1].text);
+
+// JSON Format
+const todoJSON = JSON.stringify(todos);
+console.log(todoJSON);
+
+
+////////////////////////////////////////////
+// Loops //
+////////////////////////////////////////////
+
+// For (pass three parameters ---> itrater, condition needs to be met, increment)
+for(let i = 0; i <= 10; i++ ) {// will run until i <= 10 is true
+  console.log(`For Loop Number: ${i}`);  
+}
+
+// While loop (set the variable outside of the loop. take a condition and increment inside the {})
+let i = 0;
+while(i < 10) {
+    console.log(`While Loop Number: ${i}`);
+    i++;
+}
+//////////////////////////
+// Looping through arrays
+//////////////////////////
+for (let i = 0; i < todos.length; i++) {
+     console.log(todos[i].text);
+}
+// or
+// For of loop (to loop through an array)
+for (let todo of todos) {
+    console.log(todo);
+    console.log(todo.text);
+}
+
+// or
+// Higher array methods
+// forEach(loops through an array) 
+// map (creates a new array from the array)
+// filter (creates an array from the array based on a condition)
+
+// forEach it takes a prameter
+todos.forEach(function(todo) {
+    console.log(todo.text);
+});
+
+// map because it return a new array, we need to assign it to a variable
+const todoText = todos.map(function(todo) {
+    return todo.text;
+});
+console.log(todoText);
+
+// filter
+const todoCompleted = todos.filter(function(todo) {
+    return todo.isCompleted === true;
+});
+console.log(todoCompleted);
+
+// filter and map togther
+const todoIsCompleted = todos.filter(function(todo) {
+    return todo.isCompleted === true;
+}).map(function(todo) {
+    return todo.text;
+});
+console.log(todoIsCompleted);// returns an array with text of only completed text.
