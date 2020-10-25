@@ -379,6 +379,103 @@ console.log(person2);
 
 
 ////////////////////////////////////////////
-// DOM //
+// DOM // document object model - tree structor of the html file
 ////////////////////////////////////////////
 
+// mostly used are getElementById(''), querySelector('), querySelectorAll('');
+// window object
+console.log(window)//is the parent element of the borwser
+//window.alert(1);
+//since it's a top level we don't need to write it we can just do
+//alert(1);
+
+//////////////////////////
+// Single element selector
+console.log(document.getElementById('my-form'));
+const form = document.getElementById('my-form');//assign it
+console.log(form);
+console.log(document.querySelector('.container'));
+console.log(document.querySelector('h1'));// it'll select the first one
+/////////////////////////////
+// Multiple elements selector
+console.log(document.querySelectorAll('.item'));
+console.log(document.getElementsByClassName('.item'));
+console.log(document.getElementsByTagName('li'));
+
+
+// loop through
+const items = document.querySelectorAll('.item');
+
+items.forEach((item) => console.log(item));
+
+//////////////////////////
+// Manipulating the DOM (user interface)
+//////////////////////////
+// const ul = document.querySelector('.items');
+// // ul.remove();
+// // ul.lastElementChild.remove();
+// ul.firstElementChild.textContent = 'Hello';
+// ul.children[1].innerText = 'Brad';
+// ul.lastElementChild.innerHTML = '<h1>Hello</h1>';
+
+// const btn = document.querySelector('.btn');
+// // btn.style.background = 'red';
+
+// Event Listener
+// btn.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     console.log(e.target)//giving us the element where the evnet is on
+//     console.log(e.target.className)
+//     console.log(e.target.id)
+// });
+// btn.addEventListener('click', (e) => {
+//     e.preventDefault();
+//    document.querySelector('#my-form').style.background = '#ccc';
+//    document.querySelector('body').classList.add('bg-dark');
+//    document.querySelector('.items').lastElementChild.innerHTML = '<h1>Hellooo</h1>'
+// });
+
+// btn.addEventListener('mouseover', (e) => {
+//     e.preventDefault();
+//    document.querySelector('#my-form').style.background = '#ccc';
+//    document.querySelector('body').classList.add('bg-dark');
+//    document.querySelector('.items').lastElementChild.innerHTML = '<h1>Hellooo</h1>'
+// });
+
+// btn.addEventListener('mouseout', (e) => {
+//     e.preventDefault();
+//    document.querySelector('#my-form').style.background = '#ccc';
+//    document.querySelector('body').classList.add('bg-dark');
+//    document.querySelector('.items').lastElementChild.innerHTML = '<h1>Hellooo</h1>'
+// });
+
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userList = document.querySelector('#users');
+
+myForm.addEventListener('submit', onSubmit);
+
+function onSubmit(e) {
+    e.preventDefault();
+    
+    if(nameInput.value === '' || emailInput.value === '') {
+        // alert('Please enter fields');
+        msg.classList.add('error')
+        msg.innerHTML = 'Please enter all fields'
+
+        setTimeout(() => msg.remove(), 3000); //3 seconds
+    } else {
+        console.log('success');
+       const li = document.createElement('li');
+       li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
+
+       userList.appendChild(li);
+
+       // clear the fields
+       nameInput.value = '';
+       emailInput.value = '';
+    }
+    // console.log(nameInput.value);
+}
