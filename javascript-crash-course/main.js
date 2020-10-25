@@ -322,3 +322,57 @@ todos.forEach((todo) => console.log(todo));
 ////////////////////////////////////////////
 // Object Oriented Programming //
 ////////////////////////////////////////////
+// we can constract objects using constractor functions
+
+// constructor function (Person is custom constructor)
+function Person(firstName, lastName, dob) {
+    this.firstName = firstName;//setting them with the property of the object
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+    // this.getBirthYear = function() {// method will show in the object
+    //     return this.dob.getFullYear();
+    // }
+//     this.getFullName = function() {
+//         return `${this.firstName} ${this.lastName}`;
+//     }
+}
+// methods added to prototype (see the chrome console)
+Person.prototype.getBirthYear = function() {// method will staty in prototype
+    return this.dob.getFullYear();
+}
+Person.prototype.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`;
+}
+
+//Instantiate object
+const person1 = new Person('John', 'Doe', '4-3-1980');
+
+console.log(person1, person1.firstName);
+console.log(person1.dob);
+console.log(person1.dob.getFullYear());
+console.log(person1.getBirthYear());
+console.log(person1.getFullName());
+
+///////////////////
+// ES6 classes 
+//////////////////
+// it's a syntactic sugar. a pretty way to write the above
+
+// Class
+class Personn {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName;//setting them with the property of the object
+        this.lastName = lastName;
+        this.dob = new Date(dob);
+    }
+    getBirthYear() {// method
+        return this.dob.getFullName();
+    }
+    getFullName() {// method
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+// Instantiate object
+const person2 = new Person('Mary', 'Smith', '3-6-1970');
+console.log(person2);
