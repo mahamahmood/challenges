@@ -107,3 +107,96 @@ for(element in StarWars) {
     element++;
 }
 /////////////////////
+// Booleans & Loops
+// create a loop that prints 'Hi' 15 times
+let w = 0;
+while(w <= 15) {
+    console.log('Hi');
+    w++;
+}
+// create a loop that prints 'YEP!' 30 times
+let o = 0;
+while(o <= 30) {
+    console.log('YEP!');
+    o++;
+}
+//// hw ////
+// create a loop count 0-99 ascending
+for(let i = 0; i <= 99; i++) {
+    console.log(i);
+}
+// create a loop count 0-99 descending
+for(let i = 99; i >=0; i--) {
+    console.log(i)
+}
+let num = 99;
+const limited = 0;
+while(num >= limited) {
+    console.log(num);
+    num--;
+}
+// create a loop logs only EVEN numbers from 0-98 ascending
+for(let i = 0; i <= 98; i += 2) {
+    console.log(i);
+}
+let number = 0;
+const limiting = 98;
+while(number <= limiting) {
+    console.log(number);
+    number += 2;
+}
+// create a loop logs EVEN numbers from 98-0 descending
+for(let i = 98; i >=0; i -= 2) {
+    console.log(i);
+}
+
+let num1 = 98;
+const limit1 = 0;
+while(num1 >= limit1) {
+    console.log(num1);
+    num1 -=2;
+}
+// create a loop that logs the ODD numbers from 0-99 ascending
+for(let i = 1; i <= 99; i += 2) {
+    console.log(i)
+}
+let num2 = 1;
+const limit2 = 99;
+while(num2 <= limit2) {
+    console.log(num2);
+    num2 += 2;
+}
+// create a loop that logs ODD nums from 0-99 descending
+for(let i = 99; i >= 0; i -= 2) {
+    console.log(i)
+}
+let num3 = 99;
+const limit3 = 0;
+while(num3 >= limit3) {
+    console.log(num3);
+    num3 -=2;
+}
+// create a loop that logs nums from 49-72 ascending
+for(let i = 49; i <= 72; i++) {
+    console.log(i);
+}
+let num4 = 49;
+const limit4 = 72;
+while(num4 <= limit4) {
+    console.log(num4);
+    num4 ++;
+}
+// create a loop that logs nums 81-26 descending
+for(let i = 81; i >= 26; i--) {
+    console.log(i);
+}
+// create a looop logs nums 3-90 are multiples of 3 ascending
+for(let i =3; i <= 90; i += 3) {
+    console.log(i);
+}
+let num5 = 3;
+const limit5 = 90;
+while(num5 <= limit5) {
+    console.log(num5);
+    num5 += 3;
+}
