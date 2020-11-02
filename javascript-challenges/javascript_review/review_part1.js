@@ -61,3 +61,49 @@ for(j in loopArr) {
     j++;
 }
 /////////////////////
+// Boolean expressions and variable assignment
+const a = 4;
+const b = 53;
+const c = 57;
+const d = 16;
+const e = 'Kevin';
+const f = false;
+// evaluates all to true
+console.log(a < b);
+console.log(c > d);
+console.log('name' == 'name');
+console.log(a != b < c);
+console.log(a === a != d);
+console.log(e == 'Kevin');
+console.log(48 !== '48');
+console.log(f != e);
+let g = 0;
+g = b+ c
+console.log(g);
+
+// For Loops
+// write for loop count 0 - 999
+for(let i = 0; i <= 999; i++) {
+    console.log(i)
+}
+
+// For loop in reverse
+for(let i = 999; i >= 0; i--) {
+    console.log(i)
+}
+
+// for loop string concatenation or template literals
+for(let i = 0; i <= 10; i++) {
+    console.log(`The value of i is: ${i} of 10`);
+}
+
+// Iteration through an array
+const StarWars = ["Han", "C3PO", "R2D2", "Luke", "Leia", "Anakin"];
+for(let i = 0; i < StarWars.length; i++) {
+    console.log(`element of the array: ${StarWars[i]}`)
+}
+for(element in StarWars) {
+    console.log(StarWars[element] + ' has the index of ' + element);
+    element++;
+}
+/////////////////////
