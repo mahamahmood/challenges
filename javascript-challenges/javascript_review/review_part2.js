@@ -58,3 +58,23 @@ console.log(random1);
 const random2 = Math.ceil(Math.random() * 6);
 console.log(random2);
 
+
+// Ternary Operator 
+//expression ? true : false
+// 'dog' ? console.log(true) : console.log(false)
+
+// Do..while
+// runs once then it checks if it's true of false
+// let x = 100;
+// do {
+//     console.log(x);
+//     x--
+// } while (x > 0);
+
+// do {
+//     if (x % 2 !== 0) {
+//         console.log(x);
+//     }
+//     x--
+// } while (x > 0);
+
