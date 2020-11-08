@@ -82,3 +82,40 @@ for(let i = 1; i <= 100; i++) {
     bank_account2 += i * 2;
 }
 console.log(bank_account2);
+
+////// Checkerboard //////
+const boardSize = 8;
+let evenRow = '';
+let oddRow = '';
+
+for(let i = 0; i < boardSize; i++) {
+    if(i % 2 == 0){
+        evenRow += '#';
+        oddRow += ' ';
+    } else {
+        evenRow += ' ';
+        oddRow += '#';
+    }
+}
+console.log(evenRow);
+console.log(oddRow);
+console.log(evenRow);
+console.log(oddRow);
+
+for(let i = 0; i < boardSize / 2; i++) {
+    if(i % 2 == 0) {
+        console.log(evenRow);
+    } else {
+        console.log(oddRow);
+    }
+
+}
+// Solution 2
+let row = '';
+for(let i = 1; i <= boardSize / 2; i ++){
+  row += '# ';
+}
+
+for(let i = 1; i <= boardSize / 2; i++){
+  console.log(row);
+}
