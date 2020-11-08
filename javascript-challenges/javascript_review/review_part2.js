@@ -9,7 +9,7 @@ console.log(Math.ceil(cartTotal));//round up
 console.log(Math.floor(cartTotal));// round down
 
 // random numbers 0-10
-console.log(Math.floor(Math.random()*10));
+console.log(Math.floor(Math.random() * 10));
 
 // min max
 let one = 1;
@@ -49,7 +49,7 @@ console.log(smallestNum);
 const squareRoot = Math.sqrt(e);
 console.log(squareRoot);
 // Raise 'e' to the power of 'd';
-const toThePower = Math.pow(e,d);
+const toThePower = Math.pow(e, d);
 console.log(toThePower);
 // Generate a random num between 1 - 6;
 const random1 = Math.floor(Math.random() * 6 + 1);
@@ -130,8 +130,8 @@ console.log(mArray[5][2][0]); // logs 8
 
 // Getting the last and middle element of an array
 const mArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(mArr[mArr.length-1]);// logs last element
-console.log(mArr[Math.floor(myArr.length/2)]);// middle element;
+console.log(mArr[mArr.length - 1]);// logs last element
+console.log(mArr[Math.floor(myArr.length / 2)]);// middle element;
 
 // Array Methods
 const myArray1 = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -157,9 +157,9 @@ console.log(myArray1.reverse(), myArray1);
 
 /// Slice and Splice
 // slice doesn't mutate the array; it gives subset of an array
-console.log(myArray1.slice(1,3), myArray1); //prints element 1 and 2 but not 3 the last one
+console.log(myArray1.slice(1, 3), myArray1); //prints element 1 and 2 but not 3 the last one
 // splice mutates the array
-console.log(myArray1.splice(2,3), myArray1);
+console.log(myArray1.splice(2, 3), myArray1);
 
 /// Sort
 const myArray2 = [1, 4, 2, 3, 5, 8, 7, 6];
@@ -177,3 +177,45 @@ let arr1 = [1];
 let arr2 = [...arr1];
 arr1[0] = 5;
 console.log(arr1, arr2);
+
+///////////////////////////////////
+// Conditionals //
+let lightsOn = false;
+if (lightsOn) {
+    console.log("The lights are on!");
+} else {
+    console.log('The lights are off. Goodnight');
+}
+// or
+lightsOn ? console.log('The lights are on!') : console.log('The llights are off');
+
+let name = "Ayla";
+
+if (name === "Ayla") {
+    console.log("Hello Ayla");
+} else if (name === "Arthur") {
+    console.log("Arthur");
+} else {
+    console.log("I don't know you");
+}
+
+// Switch
+switch (name) {
+    case 'Ayla':
+        console.log('Hello Ayla');
+        break;
+    case 'Ira':
+        console.log('Hello Ira');
+        break;
+    default: //same as else
+        console.log('I don\'t know you');
+}
+console.log(`Hello ${name}`);
+
+x = 0;
+do {
+    console.log('Hello');
+} while (x !== 0);
+for (let i = 0; i < 10; i++) {
+    console.log(`The count is at: ${i}`);
+}
