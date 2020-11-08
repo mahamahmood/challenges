@@ -154,3 +154,26 @@ console.log(myArray1.unshift(0), myArray1);
 /// Reverse
 // reverse an array
 console.log(myArray1.reverse(), myArray1);
+
+/// Slice and Splice
+// slice doesn't mutate the array; it gives subset of an array
+console.log(myArray1.slice(1,3), myArray1); //prints element 1 and 2 but not 3 the last one
+// splice mutates the array
+console.log(myArray1.splice(2,3), myArray1);
+
+/// Sort
+const myArray2 = [1, 4, 2, 3, 5, 8, 7, 6];
+console.log(myArray2.sort());
+
+/// Refrence vs Value
+// Primitives: strings, numbers, booleans are passed by value
+let number1 = 5;
+let number2 = number1;
+number1 = 6;
+console.log(number1, number2);
+
+// Collections: objects, arrays, sets are passed by refrence
+let arr1 = [1];
+let arr2 = [...arr1];
+arr1[0] = 5;
+console.log(arr1, arr2);
