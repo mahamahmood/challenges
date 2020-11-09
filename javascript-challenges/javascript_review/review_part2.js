@@ -219,3 +219,55 @@ do {
 for (let i = 0; i < 10; i++) {
     console.log(`The count is at: ${i}`);
 }
+
+///////////////////////////////////////////
+// Arrays and conditionals
+
+// create an array that contains three strings
+const strings = ['hello', 'hi', 'hey'];
+// Random
+// access the first element of the array
+// reassign the value of 'Hello' to "world"
+// check the value of the array to make sure it updated the array
+const randomThings = [1, 10, "Hello", true];
+console.log(randomThings[0]);
+randomThings[2] = 'World';
+console.log(randomThings);
+
+// Class
+const ourClass = ["Stan Lee", "Zoom", "Github", "Slack"];
+//access the 3rd element
+console.log(ourClass[2]);
+// update 3rd to "Octocat"
+ourClass[2] = "Octocat";
+// add a new element "Cloud City"
+ourClass.push("Cloud City");
+console.log(ourClass);
+
+// Mix it up
+const myArray = [5, 10, 500, 20];
+// add "Egon" to the end
+myArray.push('Egon');
+console.log(myArray);
+// remove string from the end
+myArray.pop();
+console.log(myArray);
+// add "Bob Marley" to the beginning
+myArray.unshift('Bob Marley');
+console.log(myArray);
+// remove string from the beginning
+myArray.shift();
+console.log(myArray);
+// reverse the array
+myArray.reverse();
+console.log(myArray);
+
+// Biggie Smalls
+// iterates over myArray and log little number if num is less than 100
+for (i in myArray) {
+    if(i < 100) {
+        console.log(`${i} is a littel number`)
+    } else if (i >= 100) {
+        console.log(`${i} is a big number`)
+    }
+}
