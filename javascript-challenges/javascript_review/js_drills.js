@@ -80,6 +80,21 @@ checkPalindrome('Racecar');
 ////////////////////////////////
 // Sum Array
 ////////////////////////////////
+// write a function that takes an argument array
+// loop through the array
+// create a variable sum 
+// return the sum of all the nums
+
+let sum = 0;
+const sumArray = (array) => {
+    for(let i = 0; i <= array.length; i++){
+        sum += i
+    }
+    // console.log(sum);
+    return sum;
+}
+console.log(sumArray([1, 2, 3, 4, 5, 6]))
+
 
 ////////////////////////////////
 // Rock Paper Scissors
