@@ -95,7 +95,23 @@ const sumArray = (array) => {
 }
 console.log(sumArray([1, 2, 3, 4, 5, 6]))
 
-
 ////////////////////////////////
 // Rock Paper Scissors
 ////////////////////////////////
+
+
+
+////////////////////////////////
+// Where is Waldo
+////////////////////////////////
+const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
+                    ["Lucinda", "Jacc", "Neff", "Snoop"],
+                    ["Petunia", ["Baked Goods", "Waldo"]]];
+// Remove Eggbert
+whereIsWaldo.splice(1,1)
+console.log(whereIsWaldo);
+// change "Neff" to "No One"
+whereIsWaldo[1][2] = "No One";
+console.log(whereIsWaldo);
+// access "Waldo"
+console.log(whereIsWaldo[2][1][1]);
