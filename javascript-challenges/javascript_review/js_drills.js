@@ -50,11 +50,32 @@ for (let i of ningaTurtlesArr) {
     console.log(i);
 }
 
-
-
 ////////////////////////////////
 // Palindrome
 ////////////////////////////////
+// wirte a function checkPalindrome that accepts a single argument a string
+// if palindrom return true otherwise flase
+const checkPalindrome = (string) => {
+    // reverse a string by:
+    // lowercase the string
+    // split the string into an array of letters
+    // reverse the array
+    // join the array
+    const reversedString = string.toLowerCase().split('').reverse().join('');
+    console.log(reversedString);
+    /////
+    // compare the new reversed string to the string
+    // make sure to lowercase the string when comparing
+    if (reversedString === string.toLowerCase()) {
+        console.log(true);
+        return true;
+    } else {
+        console.log(false);
+        return false;
+    }
+}
+checkPalindrome('hello World');
+checkPalindrome('Racecar');
 
 ////////////////////////////////
 // Sum Array
