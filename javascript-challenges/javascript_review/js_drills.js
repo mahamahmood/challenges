@@ -43,6 +43,14 @@ console.log(wolfy);
 ////////////////////////////////
 // Yell at the Ninja Turtles
 ////////////////////////////////
+// create an array with the ninja turtles (Donatello, Leonardo, Raphael, Michaelangelo)
+// use for of loop to call toUpperCase() on each of them and print out the results
+const ningaTurtlesArr = ['Donatello', 'Leonardo', 'Raphael', 'Michaelangelo'];
+for (let i of ningaTurtlesArr) {
+    console.log(i);
+}
+
+
 
 ////////////////////////////////
 // Palindrome
